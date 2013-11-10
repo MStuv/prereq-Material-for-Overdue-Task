@@ -23,12 +23,22 @@
     // *** The PCH file is a precompile file so before any of the additions are used, the project needs to be "cleaned" in order to be aware of the added commands. (Clean HotKey = Command-Shift K)
     
     //NSLog(@"%@ %@", USER_NAME, USER_PASSWORD);
-    
-    
-    NSLog(@"%@", self.textView.text);
+    //NSLog(@"%@", self.textView.text);
     
     // Set the UITextViewDelegate's delegate property to self (this viewController)
     self.textView.delegate = self;
+    
+    /// Create an instance if NSMutableArray with random data
+    /// ** Note 'mutableCopy' method is called to make the array we made with literal syntax - mutable
+    NSMutableArray *myMutableArray = [@[@1, @"hello", @3, @"goodbye"] mutableCopy];
+    
+    /// Adding an object at the beginning of myMutableArray
+    [myMutableArray insertObject:@"this should be first" atIndex:0];
+    NSLog(@"%@", myMutableArray);
+    
+    /// Removing an object at a specific index in myMutableArray 
+    [myMutableArray removeObjectAtIndex:2];
+    NSLog(@"%@", myMutableArray);
     
 }
 
@@ -58,30 +68,30 @@
     
 }
 
-/// IBAction Method for 'Process Date' Button
+// IBAction Method for 'Process Date' Button
 - (IBAction)processDateButtonPressed:(UIButton *)sender {
     
-    /// Create an instance of NSDate that is equal to the user data that was choosen on the datePicker
+    // Create an instance of NSDate that is equal to the user data that was choosen on the datePicker
     NSDate *date = self.datePicker.date;
     
-    /// Create an instance of NSDateFormatter and set the format to the desired format
+    // Create an instance of NSDateFormatter and set the format to the desired format
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
-    /// Create an instance of NSString that will hold the formatted date of the NSDate value from the datePicker
+    // Create an instance of NSString that will hold the formatted date of the NSDate value from the datePicker
     NSString *stringFromDate = [formatter stringFromDate:date];
     
-    /// Logging the formatted date with the value the user choose
+    // Logging the formatted date with the value the user choose
     NSLog(@"%@", stringFromDate);
     
-    /// Logging the current date. This NSDate method 'date' gives the current date and time
+    // Logging the current date. This NSDate method 'date' gives the current date and time
     NSLog(@"%@", [NSDate date]);
     
-    /// Creating an int equal to the value returned from the NSDate method 'timeIntervalSince1970'. This is using the NSDate object that the user choose from the datePicker.
-    /// This NSDate method 'timeIntervalSince1970' gives an int in seconds from 12:00am 1/1/1970 to the value of the NSDate instance that the method is called on.
+    // Creating an int equal to the value returned from the NSDate method 'timeIntervalSince1970'. This is using the NSDate object that the user choose from the datePicker.
+    // This NSDate method 'timeIntervalSince1970' gives an int in seconds from 12:00am 1/1/1970 to the value of the NSDate instance that the method is called on.
     int timeInterval = [date timeIntervalSince1970];
     
-    /// Logging the value of the int variable declared above. Number of seconds from 12:00am 1/1/1970 to the date and time the user entered in the datePicker
+    // Logging the value of the int variable declared above. Number of seconds from 12:00am 1/1/1970 to the date and time the user entered in the datePicker
     NSLog(@"%i", timeInterval);
     
     
