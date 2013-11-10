@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MASViewController : UIViewController
+/// Conform to UITextViewDelegate Protocol
+@interface MASViewController : UIViewController <UITextViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 @end
