@@ -18,6 +18,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    /// The USER_NAME & USER_PASSWORD are define statements that were created in the project's PCH File. The PCH File is a precompiler file that will give all created files access to the declared item in the PCH file.
+    
+    /// *** The PCH file is a precompile file so before any of the additions are used, the project needs to be "cleaned" in order to be aware of the added commands. (Clean HotKey = Command-Shift K)
+    
+    NSLog(@"%@ %@", USER_NAME, USER_PASSWORD);
+    
 }
 
 - (void)didReceiveMemoryWarning

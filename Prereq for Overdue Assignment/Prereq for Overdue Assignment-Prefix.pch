@@ -2,13 +2,20 @@
 //  Prefix header
 //
 //  The contents of this file are implicitly included at the beginning of every source file.
-//
+
+/// PCH File allows imports, defines and other macros that will automatically be included at the beginning of every .h file created.
+
+/// *** The PCH file is a precompile file so before any of the additions are used, the project needs to be "cleaned" in order to be aware of the added commands. (Clean HotKey = Command-Shift K)
 
 #import <Availability.h>
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
+
+/// by adding the following defines in this PCH file, they will be available in all of the classes that are created.
+#define USER_NAME @"name"
+#define USER_PASSWORD @"password"
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
