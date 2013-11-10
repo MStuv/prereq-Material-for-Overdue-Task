@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-/// Conform to UITextViewDelegate Protocol
+// Conform to UITextViewDelegate Protocol
 @interface MASViewController : UIViewController <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+- (IBAction)processDateButtonPressed:(UIButton *)sender;
 @end
